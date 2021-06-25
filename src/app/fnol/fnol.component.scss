@@ -1,0 +1,51 @@
+.ml-15 {
+  margin-left: 15px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mr-10{
+    margin-right: 10px;
+}
+.ml-10{
+    margin-left: 10px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.item {
+    margin: 15px 0px;
+}
+.radio-group {
+    display: inline-block;
+}
+.label {
+    display: inline-block;
+    width: 120px;
+}
+.blue-btn {
+    background-color: blue;
+    color: white;
+}
+.btn-area {
+    text-align: center;
+    margin-bottom: 80px;
+}
+.btn-text {
+    padding: 5px 60px;
+    font-size: 24px;
+}
+
+.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+    margin-bottom: 0;
+    margin: -50px 0px;
+}
+
+.top-container {
+    margin: 30px 120px;
+}
+.card-title {
+    margin: 0px !important;
+    font-weight: bold;
+}

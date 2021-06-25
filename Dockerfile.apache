@@ -1,0 +1,28 @@
+FROM node:12.14.1-slim AS builder
+ENV APP_HOME=/app
+WORKDIR $APP_HOME
+
+# reinstall packages only when the package.json is updated
+COPY ./package.json package.json
+RUN npm install
+COPY . .
+RUN npm run build
+
+########## prod image with apache ##########
+FROM ubuntu:18.04
+
+ENV PROJECT_NAME=ecs-front
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    apache2 \
+    apache2-utils
+
+COPY --from=builder /app/dist/$PROJECT_NAME /var/www/html/$PROJECT_NAME
+COPY --from=builder /app/config/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# enable mod_header module in apache 
+RUN a2enmod headers
+
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
