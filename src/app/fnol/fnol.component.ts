@@ -23,24 +23,23 @@ export class FnolComponent implements OnInit {
   subscription: Subscription;
   props$ = singleSpaPropsSubject.asObservable();
   token: string;
-
   fnolData: any;
   fnolForm: FormGroup;
   panelOpenState = false;
 
-  testData: any = {
-    policyholderName: 'Taro',
-    policyNumber: '9999',
-    product: '1',
-    insuredName: 'Taro Father',
-    relation: '2',
-    email: 'sample@gmail.com',
-    phoneNo: '666-777-888',
-    communication: '1',
-    locationOfAccident: 'Osaka',
-    dateOfAccident: '2020/4/1',
-    categoryOfHospital: '222',
-  };
+  // testData: any = {
+  //   policyholderName: 'Taro',
+  //   policyNumber: '9999',
+  //   product: '1',
+  //   insuredName: 'Taro Father',
+  //   relation: '2',
+  //   email: 'sample@gmail.com',
+  //   phoneNo: '666-777-888',
+  //   communication: '1',
+  //   locationOfAccident: 'Osaka',
+  //   dateOfAccident: '2020/4/1',
+  //   categoryOfHospital: '222',
+  // };
 
   constructor(private readonly httpService: HttpService) {
     this.initForm();
@@ -62,7 +61,10 @@ export class FnolComponent implements OnInit {
       this.token = localStorage.getItem('mainAppLocalToken');
     });
 
-    this.fnolForm.setValue(this.testData);
+    this.httpService.getFnolData().subscribe(data => {
+      this.fnolForm.setValue(data);
+    });
+    
   }
 
   submitFnolData() {
@@ -71,6 +73,7 @@ export class FnolComponent implements OnInit {
 
   initForm(): void {
     this.fnolForm = new FormGroup({
+      id: new FormControl('', [Validators.required]),
       policyholderName: new FormControl('', [Validators.required]),
       policyNumber: new FormControl('', [Validators.required]),
       product: new FormControl('', [Validators.required]),
