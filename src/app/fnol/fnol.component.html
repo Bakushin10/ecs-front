@@ -1,95 +1,13 @@
 <h1>Sub-App: 事故受付</h1>
 <div class="top-container" [formGroup]="fnolForm">
-  <mat-card>
-    <h2 class="card-title">契約情報・報告者情報</h2>
-    <mat-grid-list cols="2" rowHeight="1:1">
-      <mat-grid-tile>
-        <div class="container">
-          <div class="item">
-            <label for="" class="label">契約者名</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <input matInput formControlName="policyholderName" />
-            </mat-form-field>
-          </div>
-          <div class="item">
-            <label for="" class="label">証券番号</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <input matInput formControlName="policyNumber" />
-            </mat-form-field>
-          </div>
-          <div class="item">
-            <label for="" class="label">商品名</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <mat-select formControlName="product">
-                <mat-option value="1">医療保険</mat-option>
-                <mat-option value="2">自動車保険</mat-option>
-                <mat-option value="3">火災保険</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="item">
-            <label for="" class="label">被保険者氏名</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <input matInput formControlName="insuredName" />
-            </mat-form-field>
-          </div>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <div class="container">
-          <div class="item">
-            <label for="" class="label">契約者との関係</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <mat-select formControlName="relation">
-                <mat-option value="1">本人</mat-option>
-                <mat-option value="2">配偶者</mat-option>
-                <mat-option value="3">子ども</mat-option>
-                <mat-option value="4">役員</mat-option>
-                <mat-option value="5">従業員</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="item">
-            <label for="" class="label">メールアドレス</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <input matInput formControlName="email" />
-            </mat-form-field>
-          </div>
-          <div class="item">
-            <label for="" class="label">電話番号</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <input matInput formControlName="phoneNo" />
-            </mat-form-field>
-          </div>
-          <div class="item">
-            <label for="" class="label">希望する連絡手段</label>
-            <mat-form-field appearance="fill" class="ml-15">
-              <mat-label></mat-label>
-              <mat-select formControlName="communication">
-                <mat-option value="1">電話</mat-option>
-                <mat-option value="2">メール</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-card>
 
   <mat-card class="mt-20">
-    <h2 class="card-title">事故の状況</h2>
+    <h2 class="card-title">Name</h2>
     <mat-grid-list cols="2" rowHeight="1:1">
       <mat-grid-tile>
         <div class="container">
           <div class="item">
-            <label for="" class="label">事故場所</label>
+            <label for="" class="label">shin</label>
             <mat-form-field appearance="fill" class="ml-15">
               <mat-label></mat-label>
               <input matInput formControlName="locationOfAccident" />

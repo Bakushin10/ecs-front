@@ -5,6 +5,7 @@
 export const environment = {
   isDebugMode: true,
   production: false,
+  fnolEndpoint: "http://localhost:8080/api/v1/fnol"
 };
 
 /*
